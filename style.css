@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 28px 24px;
+  background-color: #141414;
+  border-radius: 16px;
+  border: 1px solid #e85d04;
+  box-shadow: 0 0 25px rgba(232, 93, 4, 0.2), 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: #f4a261;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 8px;
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 90px;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: #666666;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  color: #f4a261;
+  font-weight: bold;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  border-radius: 10px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: #1a1a1a;
+  border: 2px solid #3d1a00;
+  font-size: 1.2rem;
+  color: #3d2d1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:not(.flipped):not(.matched):hover .card-back {
+  border-color: #e85d04;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+.card-front {
+  background-color: #1c1c1c;
+  transform: rotateY(180deg);
+  font-size: 2rem;
+  border: 2px solid #3b3b3b;
+}
+
+.card.matched .card-front {
+  background-color: #1f1800;
+  border-color: #c44c03;
+  box-shadow: 0 0 10px rgba(109, 40, 217, 0.4);
+}
+
+.card.wrong .card-front {
+  background-color: #2a1a1a;
+  border-color: #7f1d1d;
+}
+
+#winMessage {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.88);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#winMessage.show {
+  display: flex;
+}
+
+.win-box {
+  background-color: #141414;
+  border: 1px solid #e85d04;
+  border-radius: 16px;
+  padding: 38px 50px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+}
+
+.trophy {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.win-box h2 {
+  font-size: 1.8rem;
+  color: #f4a261;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.win-box p {
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 6px;
+}
+
+.win-box strong {
+  color: #f4a261;
+}
+
+#playAgainBtn {
+  font-family: Verdana, sans-serif;
+  font-size: 0.9rem;
+  padding: 10px 30px;
+  background-color: #e85d04;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+}
+
+#playAgainBtn:hover {
+  background-color: #c44c03;
+}

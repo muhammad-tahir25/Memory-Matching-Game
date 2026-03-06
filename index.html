@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Memory Match Game</h1>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">Moves</span>
+        <span class="stat-value" id="moves">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time</span>
+        <span class="stat-value"><span id="timer">0</span> sec</span>
+      </div>
+    </div>
+
+    <div id="gameBoard"></div>
+  </div>
+
+  <div id="winMessage">
+    <div class="win-box">
+      <div class="trophy">🏆</div>
+      <h2>You Win!</h2>
+      <p>Total Moves: <strong id="winMoves">0</strong></p>
+      <p>Total Time: <strong id="winTime">0</strong> sec</p>
+      <p>Best Score: <strong id="winBest">-</strong> moves</p>
+      <button id="playAgainBtn">Restart Game</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
